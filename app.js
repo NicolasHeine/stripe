@@ -3,8 +3,7 @@ const keySecret = process.env.SECRET_KEY;
 
 const app = require("express")();
 const stripe = require("stripe")(keySecret);
-const path = require('path')
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
